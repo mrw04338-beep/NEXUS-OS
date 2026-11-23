@@ -59,7 +59,7 @@ jobs:
         id: verify
         run: |
           set -euo pipefail
-          ISO="$(find . -maxdepth 1 -type f -name '*.iso' -printf '%f\\n' | head -n1)"
+          ISO="$(find . -maxdepth 1 -type f -name '*.iso' -printf '%f\n' | head -n1)"
           test -n "$ISO"
           SIZE="$(stat -c '%s' "$ISO")"
           echo "ISO: $ISO"
