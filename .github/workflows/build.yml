@@ -63,7 +63,7 @@ jobs:
         id: verify
         run: |
           set -euo pipefail
-          ISO="$(find . -maxdepth 1 -type f -name '*.iso' -printf '%f\\n' | head -n1)"
+          ISO="$(find . -maxdepth 1 -type f -name '*.iso' -printf '%f\n' | head -n1)"
           test -n "$ISO"
           SIZE="$(stat -c '%s' "$ISO")"
           echo "ISO: $ISO"
@@ -82,6 +82,6 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           TAG="nexus-$(date -u +%Y%m%d)-${GITHUB_RUN_NUMBER}"
-          gh release create "$TAG" "${{ steps.verify.outputs.iso }}" SHA256SUMS \\
-            --title "NEXUS OS ${TAG}" \\
+          gh release create "$TAG" "${{ steps.verify.outputs.iso }}" SHA256SUMS \
+            --title "NEXUS OS ${TAG}" \
             --notes "Automated Debian Trixie Live ISO build. Architecture: amd64. Verify the download with SHA256SUMS. This is an early development build; test in a virtual machine before installing on physical hardware."
