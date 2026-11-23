@@ -11,7 +11,7 @@ kate
 
 # Network
 network-manager
-network-manager-gnome
+plasma-nm
 curl
 wget
 ca-certificates
