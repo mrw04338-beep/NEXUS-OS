@@ -2,7 +2,7 @@
 # NEXUS OS - Core packages
 
 # Desktop
-kde-plasma-desktop
+plasma-desktop
 sddm
 xserver-xorg
 konsole
