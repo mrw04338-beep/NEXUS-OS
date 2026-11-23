@@ -1,0 +1,5 @@
+# Required packages omitted when APT recommends are disabled
+user-setup
+sudo
+ifupdown
+isc-dhcp-client
